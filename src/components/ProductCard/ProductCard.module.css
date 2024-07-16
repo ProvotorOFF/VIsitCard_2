@@ -1,0 +1,81 @@
+.head {
+    position: relative;
+    height: 165px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 19px;
+}
+
+.card {
+    background-color: var(--white-color);
+    border-radius: 19px;
+    width: 320px;
+}
+
+.card * {
+    text-decoration: none;
+}
+
+.footer {
+    padding: 12px;
+}
+
+.title {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary-color);
+    text-decoration: none;
+}
+
+.price {
+    color: var(--text-color);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--white-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.currency {
+    color: var(--primary-color);
+}
+
+.rating {
+    position: absolute;
+    bottom: -15px;
+    left: 15px;
+    background-color: var(--white-color);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color)
+}
+
+.add-to-cart {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    border: none;
+}
+
+.add-to-cart:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.link {
+    text-decoration: none;
+}
