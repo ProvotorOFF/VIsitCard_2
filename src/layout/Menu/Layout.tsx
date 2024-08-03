@@ -36,15 +36,14 @@ export function Layout() {
 				<div className={styles['email']}>{profile?.email}</div>
 			</div>
 			<div className={styles['menu']}>
-				<NavLink to='/' className={({isActive}) => cn(styles['link'], {[styles['active']] : isActive})}>
+				<NavLink to='/' className={({ isActive }) => cn(styles['link'], { [styles['active']]: isActive })}>
 					<img src={menuImg} alt='Иконка меню' />
 					Меню
 				</NavLink>
-				<NavLink to='/cart' className={({isActive}) => cn(styles['link'], {[styles['active']] : isActive})}>
+				<NavLink to='/cart' className={({ isActive }) => cn(styles['link'], { [styles['active']]: isActive })}>
 					<img src={cartImg} alt='Иконка корзины' />
-					Корзина
+					Корзина <span className={styles['cart-count']}>{items.reduce((acc, item) => acc += item.count, 0)}</span>
 				</NavLink>
-				{items.reduce((acc, item) => acc += item.count, 0)}
 			</div>
 			<Button className={styles['exit']} onClick={logout}>
 				<img src={logoutImg} alt='Иконка выхода' />
