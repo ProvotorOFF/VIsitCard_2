@@ -2,6 +2,9 @@ import { useDispatch } from 'react-redux'
 import { CartItemProps } from './CartItem.props'
 import { AppDispatch } from '../../store/store'
 import { cartAction } from '../../store/cart.slice'
+import plus from '../../assets/plus.svg'
+import minus from '../../assets/minus.svg'
+import close from '../../assets/close.svg'
 import styles from './CartItem.module.css'
 
 export default function CartItem(props: CartItemProps) {
@@ -13,29 +16,29 @@ export default function CartItem(props: CartItemProps) {
 	}
 
 	const decrease = () => {
-		dispatch(cartAction.add(props.id))
+		dispatch(cartAction.decrease(props.id))
 	}
 
 	const remove = () => {
-		dispatch(cartAction.add(props.id))
+		dispatch(cartAction.remove(props.id))
 	}
 
 	return <div className={styles['item']}>
 		<div className={styles['image']} style={{ backgroundImage: `url('${props.image}')` }}></div>
 		<div className={styles['description']}>
 			<div className={styles['name']}>{props.name}</div>
-			<div className={styles['currency']}>{props.price}&nbsp;₽</div>
+			<div className={styles['price']}>{props.price}&nbsp;₽</div>
 		</div>
 		<div className={styles['actions']}>
 			<button className={styles['button']} onClick={decrease}>
-				<img src='' alt='Удалить из корзины' />
+				<img src={minus} alt='Удалить из корзины' />
 			</button>
-			<div>{props.count}</div>
+			<div className={styles['number']}>{props.count}</div>
 			<button className={styles['button']} onClick={increase}>
-				<img src='' alt='Добавить в корзину' />
+				<img src={plus} alt='Добавить в корзину' />
 			</button>
 			<button className={styles['button']} onClick={remove}>
-				<img src='' alt='Удалить все' />
+				<img src={close} alt='Удалить все' />
 			</button>
 		</div>
 	</div>

@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { Product } from '../../interfaces/product.interface'
 import axios from 'axios'
 import { PREFIX } from '../../helpers/API'
+import styles from './Cart.module.css'
 
 export default function Cart() {
 
@@ -19,18 +20,20 @@ export default function Cart() {
 
 	const loadAllItems = async () => {
 		const res = await Promise.all(items.map(i => getItem(i.id)))
+		
 		setCartProducts(res)
 	}
 
 	useEffect(() => {
 		loadAllItems()
+		
 	}, [items])
 
 	return <>
-		<Headling>Корзина</Headling>
+		<Headling className={styles['headling']}>Корзина</Headling>
 		{items.map(i => {
-			const product = cartProducts.find(p => p.id = i.id)
-			return product && <CartItem count={i.count} {...product} />
+			const product = cartProducts.find(p => p.id == i.id)
+			return product && <CartItem key={i.id} count={i.count} {...product} />
 		})}
 	</>
 }
