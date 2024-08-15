@@ -1,3 +1,28 @@
 .headling {
     margin-bottom: 40px;
 }
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 0px;
+    min-width: 512px;
+}
+
+.hr {
+    min-width: 512px;
+    margin: 0;
+    border: 1px solid #f1f2f3;
+}
+
+.text {
+    font-size: 16px;
+}
+
+.price {
+    font-size: 19px;
+}
+
+.line span {
+    color: #9796a1;
+}
