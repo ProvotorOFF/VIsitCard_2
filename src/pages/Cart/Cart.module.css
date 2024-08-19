@@ -26,3 +26,17 @@
 .line span {
     color: #9796a1;
 }
+
+.total-count {
+    color: #bebebe;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.checkout {
+    width: 512px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
